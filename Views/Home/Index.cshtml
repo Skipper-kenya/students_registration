@@ -1,0 +1,38 @@
+﻿@model List<student_registration.Models.Student>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-action="Create" method="Get" class="mb-4">
+    <input type="submit" class="btn btn-primary" value="Add new Student" />
+</form>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Reg No</th>
+            <th>ID No.</th>
+            <th>Phone Number</th>
+            <th>School/Faculty</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Registration</td>
+                <td>@student.IdNo</td>
+                <td>@student.Phone</td>
+                <td>@student.School</td>
+                <td>
+                    <a class="mr-3" asp-action="Edit"  asp-route-id="@student.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>  
+            </tr>
+        }
+    </tbody>
+</table>
