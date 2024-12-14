@@ -14,5 +14,9 @@
 
         public string School { get; set; }
 
+        public int? TechnologyId { get; set; }
+
+        public Technology? Technology { get; set; }
+
     }
 }

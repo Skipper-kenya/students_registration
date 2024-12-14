@@ -19,7 +19,7 @@ namespace student_registration.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var students = await _context.Students.ToListAsync();
+            var students = await _context.Students.Include(s=>s.Technology).ToListAsync();
 
             return View(students);
         }

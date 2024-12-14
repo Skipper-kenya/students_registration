@@ -16,6 +16,8 @@
             <th>ID No.</th>
             <th>Phone Number</th>
             <th>School/Faculty</th>
+            <th>Technology</th>
+     
             <th>Actions</th>
         </tr>
     </thead>
@@ -28,6 +30,7 @@
                 <td>@student.IdNo</td>
                 <td>@student.Phone</td>
                 <td>@student.School</td>
+                  <td>@student.Technology?.Name</td>
                 <td>
                     <a class="mr-3" asp-action="Edit"  asp-route-id="@student.Id">Edit</a>
                     <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
