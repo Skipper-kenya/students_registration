@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using student_registration.Models;
 
 namespace student_registration.Data
