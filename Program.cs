@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using student_registration.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
