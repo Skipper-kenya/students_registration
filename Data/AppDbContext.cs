@@ -18,11 +18,21 @@ namespace student_registration.Data
               new Technology() { Id=1,Name=".NET Developer",StudentId=3 }
               );
 
+            modelBuilder.Entity<Location>().HasData(
+                    new Location() { Id = 1, Name = "Bungoma" },
+                    new Location() { Id = 2, Name = "Iten" },
+                    new Location() { Id = 3, Name = "Kandara" }
+
+             );
+
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Student> Students { get; set; }
 
         public DbSet<Technology> Technologies { get; set; }
+
+        public DbSet<Location> Locations { get; set; }
+
     }
 }

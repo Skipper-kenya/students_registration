@@ -4,6 +4,10 @@
     ViewData["Title"] = "Home Page";
 }
 
+@ViewBag?.message
+<br />
+@ViewData["test"]
+
 <form asp-action="Create" method="Get" class="mb-4">
     <input type="submit" class="btn btn-primary" value="Add new Student" />
 </form>

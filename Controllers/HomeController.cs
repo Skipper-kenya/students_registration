@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using student_registration.Data;
 using student_registration.Models;
@@ -19,6 +20,8 @@ namespace student_registration.Controllers
 
         public async Task<IActionResult> Index()
         {
+            ViewBag.message = "Student Fetched";
+            ViewData["test"] = "ViewData test";
             var students = await _context.Students.Include(s=>s.Technology).ToListAsync();
 
             return View(students);
@@ -26,6 +29,10 @@ namespace student_registration.Controllers
 
         public  IActionResult Create()
         {
+            ViewData["Locations"] = new SelectList(_context.Locations, "Id" , "Name");
+
+            var test = ViewData["Locations"];
+
             return View();
         }
 

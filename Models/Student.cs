@@ -18,5 +18,10 @@
 
         public Technology? Technology { get; set; }
 
+        public int? LocationId { get; set; }
+
+        public List<Location>? Locations { get; set; }
+
+
     }
 }
