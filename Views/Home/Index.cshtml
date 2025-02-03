@@ -4,9 +4,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-@ViewBag?.message
-<br />
-@ViewData["test"]
+@await Html.PartialAsync("_Greet")
 
 <form asp-action="Create" method="Get" class="mb-4">
     <input type="submit" class="btn btn-primary" value="Add new Student" />
@@ -21,7 +19,6 @@
             <th>Phone Number</th>
             <th>School/Faculty</th>
             <th>Technology</th>
-     
             <th>Actions</th>
         </tr>
     </thead>
