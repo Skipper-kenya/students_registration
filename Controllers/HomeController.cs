@@ -2,11 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using student_registration.Data;
+using student_registration.Dto;
 using student_registration.Models;
 using System.Diagnostics;
 
+
 namespace student_registration.Controllers
-{
+{   
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -25,6 +28,12 @@ namespace student_registration.Controllers
             var students = await _context.Students.Include(s=>s.Technology).ToListAsync();
 
             return View(students);
+        }
+
+        [HttpGet]
+        public string TestParam(TestParam Params)
+        {
+            return $"Returned string {Params?.Id}";
         }
 
         public  IActionResult Create()
